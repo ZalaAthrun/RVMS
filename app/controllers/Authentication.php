@@ -33,7 +33,19 @@ class Authentication extends CI_Controller {
     }
 
     public function logout(){
-        
+        $response=array();
+        if(!$this->input->is_ajax_request()){
+            
+        }else{
+            $response['status'] = 200;
+            if($this->session->userdata('user')==null){
+                $response['logout'] = false;
+            }else{
+                $response['logout'] = true;
+                $this->session->unset_userdata('user');
+            }
+            echo json_encode($response);
+        }
     }
 
 }

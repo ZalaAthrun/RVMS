@@ -16,7 +16,12 @@
                 cache : false,
                 processData : false,
                 success : function(data){
-                    alert(data.status);
+                    var response = JSON.parse(data);
+                    if(response.login){
+                        // redirect
+                    }else{
+                        // display notif
+                    }
                 }
             });
 
