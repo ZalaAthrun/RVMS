@@ -16,4 +16,21 @@
                 return false;
             }
         }
+
+        public function getAllUser(){
+            $user = $this->db->query("SELECT user.id, user.name, user.username, user.email, user_role.description as role
+                    FROM users user LEFT JOIN roles user_role ON user.role = user_role.id");
+            return $user->result();
+        }
+
+        public function add(){
+            $user = array(
+                "username" => $this->username,
+                "email" => $this->email,
+                "password" => sha1($this->password),
+                "name" => $this->name,
+                "role" => $this->role
+            );
+            return $this->db->insert('users',$user);
+        }
     }

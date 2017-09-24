@@ -12,8 +12,6 @@ class Home extends CI_Controller {
         $response = array();
         if($this->input->is_ajax_request()){
             $this->home();
-            $response['status'] = 200;
-            echo json_encode($response);
         }else{
             $this->session->set_flashdata("view-url","modul/homepage/home");
             $response['page'] = "modul/homepage/home";

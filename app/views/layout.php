@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/alertify.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/alertify.theme.css">
 </head>
 <body>
     <?php if($this->session->userdata('user')!=null){ ?>
@@ -94,7 +96,7 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MENU UTAMA</li>
                     <li class="active treeview">
-                    <a href="#">
+                    <a href="#" id="home-link">
                         <i class="fa fa-dashboard"></i> <span>Beranda</span>
                         <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
@@ -123,7 +125,7 @@
                     </ul>
                     </li>
                     <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-                    <li><a href="#"><i class="fa fa-user"></i> <span>Pengguna Sistem</span></a></li>
+                    <li><a href="#" id="user-link"><i class="fa fa-user"></i> <span>Pengguna Sistem</span></a></li>
                 </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -132,18 +134,6 @@
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                <h1>
-                    Dashboard
-                    <small>Control panel</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
-                </section>
-
                 <div id="main-content">
                 <?php  
                     if($page!=null){
@@ -161,7 +151,8 @@
     <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/alertify.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/adminlte.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 </body>
 </html>
