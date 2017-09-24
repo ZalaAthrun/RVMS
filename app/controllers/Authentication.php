@@ -48,4 +48,8 @@ class Authentication extends CI_Controller {
         }
     }
 
+    public function refreshLayout(){
+        $this->load->view("layout");   
+    }
+
 }

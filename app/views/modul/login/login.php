@@ -1,7 +1,7 @@
 <div id="login-view">
     <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>RV</b>MS</a>
+        <a><b>RV</b>MS</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
