@@ -31,11 +31,13 @@
                 processData : false,
                 success : function(data){
                     var response = JSON.parse(data);
-                    // if(response.add){
-                    //     history.pushState({}, 'RVMS - Home', base_url+'user/index');
-                    // }else{
-                    //      display notif
-                    // }
+                    if(response.userAdd){
+                        history.pushState({}, 'RVMS - Home', base_url+'user/index');
+                        alertify.alert("Pengguna Berhasil ditambahkan");
+                        $('#main-content').load(base_url+"user/addForm");
+                    }else{
+                         //display notif
+                    }
                 }
             });
         });

@@ -24,16 +24,20 @@
         <div class="box-body">
         <form role="form" id="user-add-form">
                 <div class="form-group">
+                  <label for="user-add-username">Username</label>
+                  <input type="text" class="form-control" name="user-add-username" id="user-add-username" placeholder="Username">
+                </div>
+                <div class="form-group">
                   <label for="user-add-email">Email address</label>
-                  <input type="email" class="form-control" id="user-add-email" placeholder="Email">
+                  <input type="email" class="form-control" name="user-add-email" id="user-add-email" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="user-add-password">Password</label>
-                  <input type="password" class="form-control" id="user-add-password" placeholder="Password">
+                  <input type="password" class="form-control" name="user-add-password"  id="user-add-password" placeholder="Password">
                 </div>
                 <div class="form-group">
                   <label for="user-add-name">Nama Lengkap</label>
-                  <input type="text" class="form-control" id="user-add-name" placeholder="Nama Lengkap">
+                  <input type="text" class="form-control" name="user-add-name id="user-add-name" placeholder="Nama Lengkap">
                 </div>
                 <div class="form-group">
                 <label>Jabatan</label>

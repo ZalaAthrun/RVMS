@@ -48,7 +48,7 @@ $(document).ready(function(){
 
     /*
         End Authentication Function
-    *//*
+    */var base_url = "http://127.0.0.1/RVMS/index.php/";/*
     SPA - Script for RVMS
 */
     /*
@@ -81,8 +81,31 @@ $(document).ready(function(){
 
         // display user form
         $('body').on('click','#user-add',function(){
-            $('#main-content').load(base_url+"user/add");
-            history.pushState({}, 'RVMS - User Management', base_url+'user/add');
+            $('#main-content').load(base_url+"user/addForm");
+            history.pushState({}, 'RVMS - User Management', base_url+'user/addForm');
+        });
+
+        // submit user add form
+        $('body').on('click','#user-add-submit',function(){
+            var addForm = $('#user-add-form').serialize();
+            $.ajax({
+                url : base_url+"user/add",
+                type : "POST",
+                data : addForm,
+                mimeType : "multipart/form-data",
+                cache : false,
+                processData : false,
+                success : function(data){
+                    var response = JSON.parse(data);
+                    if(response.userAdd){
+                        history.pushState({}, 'RVMS - Home', base_url+'user/index');
+                        alertify.alert("Pengguna Berhasil ditambahkan");
+                        $('#main-content').load(base_url+"user/addForm");
+                    }else{
+                         //display notif
+                    }
+                }
+            });
         });
 
     });

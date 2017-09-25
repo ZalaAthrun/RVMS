@@ -31,6 +31,7 @@
                 "name" => $this->name,
                 "role" => $this->role
             );
-            return $this->db->insert('users',$user);
+            $this->db->insert('users',$user);
+            return true;
         }
     }

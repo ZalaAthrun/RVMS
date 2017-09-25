@@ -39,10 +39,21 @@ class User extends CI_Controller {
     public function add(){
         $response = array();
         if($this->input->is_ajax_request()){
-            $this->UserModel->username = $this->input->post('username');
-            $this->UserModel->email = $this->input->post('email');
-            $this->UserModel->password = $this->input->post('password');
-            $this->UserModel->
+            $this->UserModel->username = $this->input->post('user-add-username');
+            $this->UserModel->email = $this->input->post('user-add-email');
+            $this->UserModel->password = $this->input->post('user-add-password');
+            $this->UserModel->role = $this->input->post('user-add-role');
+            $this->UserModel->name = $this->input->post('user-add-name');
+            if($this->UserModel->add()){
+                $response['status'] = 201;
+                $response['userAdd'] = true;
+            }else{
+                $response['status'] = 204;
+                $response['userAdd'] = false;
+            }
+        }else{
+            $response['status'] = 400;
         }
+        echo json_encode($response);
     }
 }
