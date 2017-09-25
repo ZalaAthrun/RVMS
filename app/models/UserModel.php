@@ -34,4 +34,11 @@
             $this->db->insert('users',$user);
             return true;
         }
+        public function delete(){
+            $user = array(
+                "id" => $this->id
+            );
+            $this->db->remove('users',$user);
+            return true;
+        }
     }

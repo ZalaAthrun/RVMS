@@ -45,15 +45,35 @@ class User extends CI_Controller {
             $this->UserModel->role = $this->input->post('user-add-role');
             $this->UserModel->name = $this->input->post('user-add-name');
             if($this->UserModel->add()){
-                $response['status'] = 201;
+                $response['status'] = 201; // created
                 $response['userAdd'] = true;
             }else{
-                $response['status'] = 204;
+                $response['status'] = 204; // fail created blank
                 $response['userAdd'] = false;
             }
         }else{
             $response['status'] = 400;
         }
         echo json_encode($response);
+    }
+
+    public function delete($id=null){
+        if($this->input->is_ajax_request()){
+            $response = array();
+            if($id==null){
+                $response['status'] = 400; // bad request
+            }else{
+                $this->UserModel->id = $id;
+                $response['status'] = 200;
+                if($this->UserModel->delete()){
+                    $response['deleteUser'] = true;
+                }else{
+                    $response['deleteUser'] = false;
+                }
+            }
+            echo json_encode($response);
+        }else{
+            // exit
+        }
     }
 }

@@ -100,13 +100,57 @@ $(document).ready(function(){
                     if(response.userAdd){
                         history.pushState({}, 'RVMS - Home', base_url+'user/index');
                         alertify.alert("Pengguna Berhasil ditambahkan");
-                        $('#main-content').load(base_url+"user/addForm");
+                        $('#main-content').load(base_url+"user/index");
                     }else{
                          //display notif
                     }
                 }
             });
         });
+
+        $('body').on('click','#user-remove-button',function(){
+            alertify.confirm("Menghapus Pengguna","Apakah anda yakin ingin menghapus pengguna?",
+                    function(){
+                    // delete confirmed
+                        $.ajax({
+                            url : base_url+"user/delete/"+$('#user-remove-button').data('userid'),
+                            type : "POST",
+                            cache : false,
+                            success: function(data){
+                                var response = JSON.parse(data);
+                                if(response.deleteUser){
+                                    alertify.alert("Pengguna berhasil dihapus");
+                                    history.pushState({}, 'RVMS - Home', base_url+'user/index');
+                                    $('#main-content').load(base_url+"user/index");
+                                }else{
+                                    alertify.alert("Pengguna gagal dihapus");
+                                }
+                            }
+                        });
+                    },
+                    function(){
+                        // cancel delete
+                    }
+            );
+        });
+
+        // reset password
+        $('body').on('click','#user-reset-password-button',function(){
+            var name = $(this).closest("tr").find("#user-name").text();  
+            changePassword(name,$('#user-reset-password-button').data('userid'));
+        });
+
+        function changePassword(name=null,id){
+            alertify.prompt('Anda akan mengganti kata sandi untuk pengguna '+name,'Kata sandi baru','',
+                function(evt,value){
+                    var old = value;
+                    alertify.prompt("OK");
+                },
+                function(){
+                    
+                }
+            );
+        }
 
     });
 

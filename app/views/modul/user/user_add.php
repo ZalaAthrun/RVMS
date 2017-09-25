@@ -37,11 +37,11 @@
                 </div>
                 <div class="form-group">
                   <label for="user-add-name">Nama Lengkap</label>
-                  <input type="text" class="form-control" name="user-add-name id="user-add-name" placeholder="Nama Lengkap">
+                  <input type="text" class="form-control" name="user-add-name" id="user-add-name" placeholder="Nama Lengkap">
                 </div>
                 <div class="form-group">
                 <label>Jabatan</label>
-                <select class="form-control" id="user-add-role">
+                <select class="form-control" name="user-add-role" id="user-add-role">
                   <option value="1">Administrator/Pemilik</option>
                   <option value="2">Karyawan</option>
                 </select>

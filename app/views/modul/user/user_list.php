@@ -23,7 +23,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="user-table" class="table table-bordered table-hover">
             <thead>
             <tr>
               <th>Username</th>
@@ -36,13 +36,13 @@
             </thead>
             <tbody>
             <?php foreach($users as $user){ ?>
-                <tr>
+                <tr id="user-list">
                     <td><?php echo $user->username; ?></td>
-                    <td><?php echo $user->name; ?></td>
+                    <td id="user-name"><?php echo $user->name; ?></td>
                     <td><?php echo $user->email; ?></td>
                     <td><?php echo $user->role; ?></td>
                     <td><button type="button" class="btn btn-primary btn-flat" id="user-reset-password-button" user-id="<?php echo $user->id; ?>">Reset</button></td>
-                    <td><button type="button" class="btn btn-danger btn-flat" id="user-remove-button" user-id="<?php echo $user->id; ?>">Hapus</button></td>
+                    <td><button type="button" class="btn btn-danger btn-flat" id="user-remove-button" data-userid="<?php echo $user->id; ?>">Hapus</button></td>
                 </tr>
             <?php } ?>
             </tbody>
