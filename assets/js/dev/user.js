@@ -47,7 +47,7 @@
                     function(){
                     // delete confirmed
                         $.ajax({
-                            url : base_url+"user/delete/"+$('#user-remove-button').data('userid'),
+                            url : base_url+"user/delete/"+$(this).closest("tr").find("#user-remove-button").data('userid'),
                             type : "POST",
                             cache : false,
                             success: function(data){
@@ -71,13 +71,8 @@
         // reset password
         $('body').on('click','#user-reset-password-button',function(){
             var name = $(this).closest("tr").find("#user-name").text();  
-            var id = $('#user-reset-password-button').data('userid');
-            
+            var id = $(this).closest("tr").find("#user-reset-password-button").data('userid');
         });
-
-        function changePassword(name=null,id){
-
-        }
 
     });
 
