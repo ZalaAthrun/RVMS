@@ -76,4 +76,25 @@ class User extends CI_Controller {
             // exit
         }
     }
+
+    public function changePassword($id = null){
+        if($this->input->is_ajax_request()){
+            $response = array();
+            if($id == null){
+                $response['status'] = 400; // bad request
+            }else{
+                $this->UserModel->id = $id;
+                $this->UserModel->password = $this->input->post('password');
+                $response['status'] = 201;
+                if($this->UserModel->changePassword()){
+                    $response['changePassword'] = true;
+                }else{
+                    $response['changePassword'] = false;
+                }
+                echo json_encode($response);
+            }
+        }else{
+
+        }
+    }
 }

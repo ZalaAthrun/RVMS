@@ -41,4 +41,12 @@
             $this->db->remove('users',$user);
             return true;
         }
+        public function changePassword(){
+            $user = array(
+                "password" => sha1($this->password)
+            );
+            $this->db->where('id',$this->id);
+            $this->db->update('users',$user);
+            return true;
+        }
     }

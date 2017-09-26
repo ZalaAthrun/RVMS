@@ -72,6 +72,27 @@
         $('body').on('click','#user-reset-password-button',function(){
             var name = $(this).closest("tr").find("#user-name").text();  
             var id = $(this).closest("tr").find("#user-reset-password-button").data('userid');
+            alertify.prompt("Ubah Password Pengguna "+name,"Isi password baru","",
+                function(evt, value){
+                    $.ajax({
+                        url : base_url+"user/changePassword/"+id,
+                        type : "POST",
+                        data : {password : value},
+                        cache : false,
+                        success : function(data){
+                            var response = JSON.parse(data);
+                            if(response.changePassword){
+                                alertify.alert("Kata sandi "+name+" berhasil di ubah");
+                            }else{
+                                alertify.alert("Kata sandi "+name+" gagal di ubah");
+                            }
+                        }
+                    });
+                },
+                function(){
+
+                }
+            );
         });
 
     });
