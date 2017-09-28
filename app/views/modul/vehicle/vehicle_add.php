@@ -71,6 +71,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
+              <a href="#" class="pull-left" id="vehicle-link"><<< Kembali ke halaman daftar kendaraan</a>
                 <button type="button" id="vehicle-add-submit" class="btn btn-primary pull-right">Simpan</button>
               </div>
             </form>

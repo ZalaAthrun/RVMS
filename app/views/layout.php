@@ -39,16 +39,15 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?php echo base_url(); ?>/assets/img/avatar.png" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Rizki Maulana Akbar</span>
+                        <span class="hidden-xs"><?php echo $this->session->userdata('user')['username']; ?></span>
                         </a>
                         <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="<?php echo base_url(); ?>/assets/img/avatar.png" class="img-circle" alt="User Image">
-
                             <p>
-                            Rizki Maulana Akbar - Web Developer
-                            <small>Administrator</small>
+                            <?php echo $this->session->userdata('user')['name']; ?>
+                            <small><?php echo $this->session->userdata('user')['description']; ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -78,7 +77,7 @@
                     <img src="<?php echo base_url(); ?>/assets/img/avatar.png" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                    <p>Rizki Maulana Akbar</p>
+                    <p><?php echo $this->session->userdata('user')['name']; ?></p>
                     </div>
                 </div>
                 <!-- sidebar menu: : style can be found in sidebar.less -->

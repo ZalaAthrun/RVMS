@@ -41,6 +41,7 @@
         
                 $('body').on('click','#user-remove-button',function(){
                     var id = $(this).closest("tr").find("#user-remove-button").data('userid');
+                    var row = $(this).closest("tr");
                     alertify.confirm("Menghapus Pengguna","Apakah anda yakin ingin menghapus pengguna?",
                             function(){
                             // delete confirmed
@@ -52,8 +53,7 @@
                                         var response = JSON.parse(data);
                                         if(response.deleteUser){
                                             alertify.alert("Pengguna berhasil dihapus");
-                                            history.pushState({}, 'RVMS - Home', base_url+'user/index');
-                                            $('#main-content').load(base_url+"user/index");
+                                            row.remove();
                                         }else{
                                             alertify.alert("Pengguna gagal dihapus");
                                         }

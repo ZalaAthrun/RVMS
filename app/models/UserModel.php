@@ -9,17 +9,25 @@
         public $role;
 
         public function login(){
-            $user = $this->db->get_where('users',array('username'=>$this->username, 'password'=>sha1($this->password)));
+            $this->db->select('*');
+            $this->db->from('users');
+            $this->db->join('roles', 'users.role = roles.id');
+            $this->db->where('username',$this->username);
+            $this->db->where('password',sha1($this->password));
+            $user = $this->db->get();
             if($user->num_rows()==1){
-                return $user->result();
+                $user_login = $user->result_array();
+                return $user_login[0];
             }else{
                 return false;
             }
         }
 
         public function getAllUser(){
-            $user = $this->db->query("SELECT user.id, user.name, user.username, user.email, user_role.description as role
-                    FROM users user LEFT JOIN roles user_role ON user.role = user_role.id");
+            $this->db->select('*');
+            $this->db->from('users');
+            $this->db->join('roles','users.role=roles.id');
+            $user = $this->db->get();
             return $user->result();
         }
 

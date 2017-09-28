@@ -40,7 +40,7 @@
                     <td><?php echo $user->username; ?></td>
                     <td id="user-name"><?php echo $user->name; ?></td>
                     <td><?php echo $user->email; ?></td>
-                    <td><?php echo $user->role; ?></td>
+                    <td><?php echo $user->description; ?></td>
                     <td><button type="button" class="btn btn-primary btn-flat" id="user-reset-password-button" data-userid="<?php echo $user->id; ?>">Reset</button></td>
                     <td><button type="button" class="btn btn-danger btn-flat" id="user-remove-button" data-userid="<?php echo $user->id; ?>">Hapus</button></td>
                 </tr>

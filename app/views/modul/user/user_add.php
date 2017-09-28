@@ -50,6 +50,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
+                <a href="#" class="pull-left" id="user-link"><<< Kembali ke halaman daftar pengguna</a>
                 <button type="button" id="user-add-submit" class="btn btn-primary pull-right">Simpan</button>
               </div>
             </form>

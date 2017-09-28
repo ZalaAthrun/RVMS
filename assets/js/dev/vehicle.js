@@ -42,6 +42,7 @@
                 $('body').on('click','#vehicle-remove-button',function(){
                     var name = $(this).closest("tr").find("#vehicle-name").text();
                     var id = $(this).closest("tr").find("#vehicle-remove-button").data('vehicleid');
+                    var row = $(this).closest("tr");
                     alertify.confirm("Konfirmasi Penghapusan Kendaraan","Apakah anda yakin ingin menghapus kendaraan "+ name+ "?",
                             function(){
                             // delete confirmed
@@ -53,8 +54,7 @@
                                         var response = JSON.parse(data);
                                         if(response.deleteVehicle){
                                             alertify.alert("Kendaraan berhasil dihapus");
-                                            history.pushState({}, 'RVMS - Vehicle Management', base_url+'vehicle/index');
-                                            $('#main-content').load(base_url+"vehicle/index");
+                                            row.remove();
                                         }else{
                                             alertify.alert("Kendaraan gagal dihapus");
                                         }
