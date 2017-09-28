@@ -1,4 +1,4 @@
-var base_url = "http://127.0.0.1/RVMS/index.php/";/*
+/*
     SPA - Script for RVMS
 */
     /*
@@ -109,11 +109,12 @@ $(document).ready(function(){
         });
 
         $('body').on('click','#user-remove-button',function(){
+            var id = $(this).closest("tr").find("#user-reset-password-button").data('userid');
             alertify.confirm("Menghapus Pengguna","Apakah anda yakin ingin menghapus pengguna?",
                     function(){
                     // delete confirmed
                         $.ajax({
-                            url : base_url+"user/delete/"+$(this).closest("tr").find("#user-remove-button").data('userid'),
+                            url : base_url+"user/delete/"+id,
                             type : "POST",
                             cache : false,
                             success: function(data){

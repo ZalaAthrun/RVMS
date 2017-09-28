@@ -23,7 +23,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <table id="user-table" class="table table-bordered table-hover">
+          <table id="user-table" class="table table-bordered table-hover table-responsive">
             <thead>
             <tr>
               <th>Username</th>

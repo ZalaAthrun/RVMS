@@ -38,7 +38,7 @@
             $user = array(
                 "id" => $this->id
             );
-            $this->db->remove('users',$user);
+            $this->db->delete('users',$user);
             return true;
         }
         public function changePassword(){
