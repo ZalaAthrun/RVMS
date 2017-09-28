@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rent Vehicle Management System</title>
+    <title>Motor Mania -  Sewa Motor Malang</title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
@@ -22,9 +22,9 @@
                 <!-- Logo -->
                 <a class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>R</b>V</span>
+                <span class="logo-mini"><b>M</b>M</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Rent</b>Vehicle</span>
+                <span class="logo-lg"><b>Motor</b>Mania</span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
@@ -57,7 +57,7 @@
                             <a class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                            <a id="logout-link" class="btn btn-default btn-flat">Sign out</a>
+                            <a id="logout-link" class="btn btn-default btn-flat">Keluar</a>
                             </div>
                         </li>
                         </ul>
@@ -81,17 +81,6 @@
                     <p>Rizki Maulana Akbar</p>
                     </div>
                 </div>
-                <!-- search form -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-                <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MENU UTAMA</li>
@@ -125,7 +114,13 @@
                     </ul>
                     </li>
                     <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+                    <!-- Menu Vehicle -->
+                    <li><a href="#" id="vehicle-link"><i class="fa fa-car"></i> <span>Manajemen Kendaraan</span></a></li>
+                    <!-- Menu Vehicle -->
+                    <!-- Menu User -->
                     <li><a href="#" id="user-link"><i class="fa fa-user"></i> <span>Pengguna Sistem</span></a></li>
+                    <!-- Menu User -->
+
                 </ul>
                 </section>
                 <!-- /.sidebar -->

@@ -40,7 +40,7 @@
                 });
         
                 $('body').on('click','#user-remove-button',function(){
-                    var id = $(this).closest("tr").find("#user-reset-password-button").data('userid');
+                    var id = $(this).closest("tr").find("#user-remove-button").data('userid');
                     alertify.confirm("Menghapus Pengguna","Apakah anda yakin ingin menghapus pengguna?",
                             function(){
                             // delete confirmed
